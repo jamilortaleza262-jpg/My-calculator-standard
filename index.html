@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcPro - Windows Style Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- We will use icons from Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- The Main Calculator -->
+    <div class="calculator">
+        <div class="calc-header">
+            <span>Calculator</span>
+            <div class="window-controls">
+                <span>🗖</span>
+                <span>🗗</span>
+                <span>✕</span>
+            </div>
+        </div>
+
+        <!-- Display Screen -->
+        <input type="text" id="display" readonly value="0">
+
+        <!-- Buttons Grid -->
+        <div class="buttons">
+            <button onclick="press('%')">%</button>
+            <button onclick="clearEntry()">CE</button>
+            <button onclick="clearAll()">C</button>
+            <button onclick="backspace()">⌫</button>
+            
+            <button onclick="press('1/')">⅟ₓ</button>
+            <button onclick="square()">x²</button>
+            <button onclick="sqrt()">√</button>
+            <button class="operator" onclick="operator('/')">÷</button>
+            
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button class="operator" onclick="operator('*')">×</button>
+            
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button class="operator" onclick="operator('-')">−</button>
+            
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button class="operator" onclick="operator('+')">+</button>
+            
+            <!-- Special Buttons A and B -->
+            <button class="btn-a" onclick="showDev()">A</button>
+            <button onclick="press('.')">.</button>
+            <button onclick="press('0')">0</button>
+            <button class="operator equals" onclick="calculate()">=</button>
+            
+            <button class="btn-b" onclick="showApp()">B</button>
+        </div>
+    </div>
+
+    <!-- MODAL 1: About App -->
+    <div id="appModal" class="modal">
+        <div class="modal-content app-modal">
+            <div class="modal-header">
+                <div class="app-icon"><i class="fas fa-calculator"></i></div>
+                <h1>CalcPro</h1>
+                <h2>WINDOWS-STYLE CALCULATOR</h2>
+                <span class="version">Version 1.0.0 — Stable Release</span>
+            </div>
+            <div class="modal-body">
+                <p>A faithful recreation of the Windows Calculator experience, crafted with pure HTML, CSS, and JavaScript. Includes standard arithmetic, special functions, and info panels via buttons A & B.</p>
+                
+                <div class="features">
+                    <div class="feature-tag"><i class="fas fa-plus"></i> Basic Arithmetic</div>
+                    <div class="feature-tag"><i class="fas fa-check"></i> Square Root</div>
+                    <div class="feature-tag"><i class="fas fa-percentage"></i> Percentage</div>
+                    <div class="feature-tag"><i class="fas fa-superscript"></i> Exponents</div>
+                    <div class="feature-tag"><i class="fas fa-history"></i> History Display</div>
+                    <div class="feature-tag"><i class="fas fa-keyboard"></i> Keyboard Input</div>
+                </div>
+
+                <div class="tech-info">
+                    <div><strong>LANGUAGE</strong><br>HTML / CSS / JS</div>
+                    <div><strong>PLATFORM</strong><br>Web / Browser</div>
+                    <div><strong>THEME</strong><br>Dark (Win11)</div>
+                </div>
+            </div>
+            <button class="close-btn" onclick="closeModal('appModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Developer Info -->
+    <div id="devModal" class="modal">
+        <div class="modal-content dev-modal">
+            <div class="dev-header">
+                <div class="dev-initials">JO</div>
+                <h1>Jamil Ortaleza</h1>
+                <h2>WEB DEVELOPER</h2>
+            </div>
+            <div class="dev-body">
+                <div class="info-row">
+                    <i class="fas fa-user"></i>
+                    <div>
+                        <span class="label">FULL NAME</span>
+                        <span class="value">Jamil Ortaleza</span>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-briefcase"></i>
+                    <div>
+                        <span class="label">ROLE</span>
+                        <span class="value">Web Developer</span>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div>
+                        <span class="label">COURSE</span>
+                        <span class="value">BSIT major in Database System</span>
+                    </div>
+                </div>
+            </div>
+            <button class="close-btn" onclick="closeModal('devModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
